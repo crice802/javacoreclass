@@ -134,6 +134,7 @@ public class Loops {
 	public static void q7() {
 		System.out.println("-------------");
 		System.out.println("Question 7: ");
+		String reverse;
 		for (int i = 10; i < 200; i++) {
 			for (int j = i - 1; j < i; j++) {
 				if (j == i) {
@@ -171,9 +172,9 @@ public class Loops {
 		System.out.println("\n-------------");
 		System.out.println("Question 9: ");
 		for (int i = 0; i < 10; i++) {
-			System.out.println("Outter Loop = " + i);
+
 			for (int j = 0; j < 10; j++) {
-				System.out.println("Inner loop = " + j);
+				System.out.println("Inner loop: i: " + i + ", j: " + j);
 			}
 		}
 	}

@@ -99,29 +99,55 @@ public class ArraysEx {
 	public static void q7() {
 		System.out.println("Question 7: ");
 		System.out.println("------------");
+
 		int[] numbers = { 15, 13, 1, 14, 74 };
-		int temp, k;
-		int size = numbers.length - 1;
+		for (int i = 0; i < numbers.length; i++) {
+			if (i == 2) {
+				continue;
 
-		for (int i = 0; i < (numbers.length - 1) / 2; i++) {
-//			temp = numbers[i];
-//			numbers[i] = numbers[size - i - 1];
-//			numbers[size - i - 1] = temp;
-			System.out.println();
+			}
 
+			System.out.println(numbers[i]);
 		}
-
 	}
 
 	public static void q8() {
 		System.out.println("Question 8: ");
 		System.out.println("------------");
 
+		String[] names = { "cory", "john", "mike", "josh", "aftin" };
+
+		String first = names[0];
+		String second = names[2];
+
+		names[2] = first;
+		names[0] = second;
+		System.out.println(Arrays.toString(names));
+
 	}
 
 	public static void q9() {
 		System.out.println("Question 9: ");
 		System.out.println("------------");
+
+		int[] nums = { 4, 2, 9, 13, 1, 0 };
+		Arrays.sort(nums);
+//		int first = 0;
+//		int second = 0;
+//		int temp;
+//		
+//		for (int i = 0 ; i < nums.length; i++) {
+//			first = i;
+//			if(first > second) {
+//				temp = first;
+//				second = temp;
+//				first = second;
+//			}
+//			
+		System.out.println("Array in ascending order: " + Arrays.toString(nums));
+		System.out.println("The smallest number is " + nums[0]);
+		System.out.println("The biggest number is " + nums[5]);
+//		}
 
 	}
 
