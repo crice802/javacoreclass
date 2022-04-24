@@ -1,5 +1,10 @@
 package monstergame;
 
+/**
+ * @author crice
+ *
+ */
+
 public interface MonsterInterface {
 
 	public void setName(String name);
