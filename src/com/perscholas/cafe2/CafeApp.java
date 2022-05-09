@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.perscholas.cafe;
+package com.perscholas.cafe2;
 
 import java.util.Scanner;
 
@@ -11,31 +11,28 @@ import java.util.Scanner;
  */
 public class CafeApp {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Product coffee = new Product("Coffee", 1.25, "Boiled bean juice.");
-		Product espresso = new Product("Espresso", 2.50, "Bold, black and string");
-		Product cappuccino = new Product("Cappuccino", 5.25, "Lots of foam.");
+
+		Product coffee = new Coffee("Coffee", 1.25, "Boiled bean juice.", true, false);
+		Product espresso = new Espresso("Espresso", 2.50, "Bold, black and string", false, true);
+		Product cappuccino = new Cappuccino("Cappuccino", 5.25, "Lots of foam.", true, true);
 
 		try (Scanner input = new Scanner(System.in);) {
 			System.out.println("How many coffees do you want?");
 			int coffeeQty = input.nextInt();
-			double coffeeSubtotal = coffee.calculateProductTotal(coffeeQty);
+			double coffeeSubtotal = coffee.calculateProductSubtotal(coffeeQty);
 			System.out.printf("Product name: %s\nDescription: %s.\nSubtotal: $%.2f\n\n", coffee.getName(),
 					coffee.getDescription(), coffeeSubtotal);
 
 			System.out.println("How many espressos do you want?");
 			int espressoQty = input.nextInt();
-			double espressoSubtotal = espresso.calculateProductTotal(espressoQty);
+			double espressoSubtotal = espresso.calculateProductSubtotal(espressoQty);
 			System.out.printf("Product name: %s\nDescription: %s.\nSubtotal: $%.2f\n\n", espresso.getName(),
 					espresso.getDescription(), espressoSubtotal);
 
 			System.out.println("How many cappuccinos do you want?");
 			int cappuccinoQty = input.nextInt();
-			double cappuccinoSubtotal = cappuccino.calculateProductTotal(cappuccinoQty);
+			double cappuccinoSubtotal = cappuccino.calculateProductSubtotal(cappuccinoQty);
 			System.out.printf("Product name: %s\nDescription: %s.\nSubtotal: $%.2f\n\n", cappuccino.getName(),
 					cappuccino.getDescription(), cappuccinoSubtotal);
 
