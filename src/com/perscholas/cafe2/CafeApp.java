@@ -18,6 +18,7 @@ public class CafeApp {
 		Product cappuccino = new Cappuccino("Cappuccino", 5.25, "Lots of foam.", true, true);
 
 		try (Scanner input = new Scanner(System.in);) {
+
 			System.out.println("How many coffees do you want?");
 			int coffeeQty = input.nextInt();
 			double coffeeSubtotal = coffee.calculateProductSubtotal(coffeeQty);
