@@ -3,6 +3,8 @@
  */
 package com.perscholas.cafe3;
 
+import java.util.Scanner;
+
 /**
  * @author crice
  *
@@ -61,6 +63,42 @@ public class Cappuccino extends Product {
 		if (whippedCream)
 			addOns += 1.00;
 		return price * quantity + addOns;
+	}
+
+	@Override
+	void addOptions() {
+		// TODO Auto-generated method stub
+		String addPeppermint, addWhippedCream;
+
+		try (Scanner input = new Scanner(System.in)) {
+
+			System.out.println("How many cappuccinos would you like?");
+			int numCappucinos = input.nextInt();
+			this.setQuantity(numCappucinos);
+
+			System.out.println("Would you like peppermint with your cappuccino? Enter Y or N.");
+			addPeppermint = input.next();
+
+			if (addPeppermint.equals("y")) {
+				this.setPeppermint(true);
+			}
+
+			System.out.println("Would you like whipped cream with your cappuccino? Enter Y or N.");
+			addWhippedCream = input.next().toLowerCase();
+
+			if (addWhippedCream.equals("y")) {
+				this.setWhippedCream(true);
+			}
+		}
+	}
+
+	@Override
+	void printOptions() {
+		// TODO Auto-generated method stub
+		System.out.printf("Item:\t%s \tPrice: $%.2f \tQty: %d \tSubtotal: $%.2f\n", getName(), getPrice(),
+				getQuantity(), calculateProductSubtotal(quantity));
+		System.out.printf("\tPeppermint: %s \tWhipped Cream: %s\n\n", peppermint ? "Yes (Add $2 per drink)" : "No",
+				whippedCream ? "Yes (Add $1 per drink)" : "No");
 	}
 
 }
