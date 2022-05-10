@@ -66,29 +66,26 @@ public class Cappuccino extends Product {
 	}
 
 	@Override
-	void addOptions() {
+	void addOptions(Scanner input) {
 		// TODO Auto-generated method stub
 		String addPeppermint, addWhippedCream;
 
-		try (Scanner input = new Scanner(System.in)) {
+		System.out.println("How many cappuccinos would you like?");
+		int numCappucinos = input.nextInt();
+		this.setQuantity(numCappucinos);
 
-			System.out.println("How many cappuccinos would you like?");
-			int numCappucinos = input.nextInt();
-			this.setQuantity(numCappucinos);
+		System.out.println("Would you like peppermint with your cappuccino? Enter Y or N.");
+		addPeppermint = input.next();
 
-			System.out.println("Would you like peppermint with your cappuccino? Enter Y or N.");
-			addPeppermint = input.next();
+		if (addPeppermint.equals("y")) {
+			this.setPeppermint(true);
+		}
 
-			if (addPeppermint.equals("y")) {
-				this.setPeppermint(true);
-			}
+		System.out.println("Would you like whipped cream with your cappuccino? Enter Y or N.");
+		addWhippedCream = input.next().toLowerCase();
 
-			System.out.println("Would you like whipped cream with your cappuccino? Enter Y or N.");
-			addWhippedCream = input.next().toLowerCase();
-
-			if (addWhippedCream.equals("y")) {
-				this.setWhippedCream(true);
-			}
+		if (addWhippedCream.equals("y")) {
+			this.setWhippedCream(true);
 		}
 	}
 

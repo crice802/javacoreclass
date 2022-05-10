@@ -3,6 +3,8 @@
  */
 package com.perscholas.cafe3;
 
+import java.util.Scanner;
+
 /**
  * @author crice
  *
@@ -85,7 +87,7 @@ public abstract class Product {
 
 	abstract double calculateProductSubtotal(int quantity);
 
-	abstract void addOptions();
+	abstract void addOptions(Scanner input);
 
 	abstract void printOptions();
 }

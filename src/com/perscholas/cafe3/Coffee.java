@@ -61,29 +61,26 @@ public class Coffee extends Product {
 	}
 
 	@Override
-	void addOptions() {
+	void addOptions(Scanner input) {
 		// TODO Auto-generated method stub
 		String addMilk, addSugar;
 
-		try (Scanner input = new Scanner(System.in)) {
+		System.out.println("How many coffees would you like?");
+		int numCoffees = input.nextInt();
+		this.setQuantity(numCoffees);
 
-			System.out.println("How many coffees would you like?");
-			int numCoffees = input.nextInt();
-			this.setQuantity(numCoffees);
+		System.out.println("Would you like milk with your coffee? Enter Y or N.");
+		addMilk = input.next();
 
-			System.out.println("Would you like milk with your coffee? Enter Y or N.");
-			addMilk = input.next();
+		if (addMilk.equals("y")) {
+			this.setMilk(true);
+		}
 
-			if (addMilk.equals("y")) {
-				this.setMilk(true);
-			}
+		System.out.println("Would you like sugar with your coffee? Enter Y or N.");
+		addSugar = input.next().toLowerCase();
 
-			System.out.println("Would you like sugar with your coffee? Enter Y or N.");
-			addSugar = input.next().toLowerCase();
-
-			if (addSugar.equals("y")) {
-				this.setSugar(true);
-			}
+		if (addSugar.equals("y")) {
+			this.setSugar(true);
 		}
 	}
 
